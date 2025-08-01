@@ -1,0 +1,83 @@
+.TH LUKA 1 "August 2025" "version 1.0" "User Commands"
+.SH NAME
+luka \- a simple terminal-based RPN calculator
+.SH SYNOPSIS
+.B luka
+[\-d | \-r] [\-s | \-f] [\-h | \-V]
+.SH DESCRIPTION
+.B luka
+is a terminal-based Reverse Polish Notation (RPN) calculator written in C,
+designed for fast and efficient number crunching in the shell.
+
+It supports standard arithmetic, trigonometric functions, memory storage,
+and stack operations, all in a simple command-line interface.
+
+.SH OPTIONS
+.TP
+.B \-d, \-\-deg
+Set angle mode to degrees.
+.TP
+.B \-r, \-\-rad
+Set angle mode to radians (default).
+.TP
+.B \-s, \-\-sci
+Use scientific notation (default).
+.TP
+.B \-f, \-\-fix
+Use fixed-point display format.
+.TP
+.B \-h, \-\-help
+Display command-line help and exit.
+.TP
+.B \-V, \-\-version
+Show version and license information.
+
+.SH FEATURES
+.TP
+.B Stack Operations
+drop, swap, clear, roll, unroll, ←, →
+.TP
+.B Math Functions
++, -, *, /, ^, sqrt, log, ln, log10, factorial (!), reciprocal (\\)
+.TP
+.B Trigonometry
+sin, cos, tan, asin, acos, atan (supports deg/rad)
+.TP
+.B Constants
+pi, e, random (rnd)
+.TP
+.B Memory
+Store: store name, Load: load name, Delete: del name
+.TP
+.B History & Navigation
+Use ↑/↓ to scroll through operation history and memory
+.TP
+.B Commands
+ENTER (repeat), q/quit, h/help, ? (credits)
+
+.SH EXAMPLES
+.TP
+Start in degrees mode with fixed-point format:
+.B luka \-\-deg \-\-fix
+.TP
+Push 2 and 3 on the stack, then multiply:
+.B 2 3 *
+.TP
+Store top of stack in variable "a":
+.B store a
+.TP
+Load variable "a" back:
+.B load a
+
+.SH AUTHOR
+Written by Davide Mastromatteo <mastro35@gmail.com>
+
+.SH LICENSE
+GPL v2. This is free software with ABSOLUTELY NO WARRANTY.
+See <https://www.gnu.org/licenses/old-licenses/gpl-2.0.html>
+
+.SH HOMEPAGE
+https://hachyderm.io/@mastro35
+
+.SH SEE ALSO
+bc(1), dc(1), python(1)
