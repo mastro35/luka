@@ -69,9 +69,9 @@ void compute_operation_0o_with_parameter(operation_0o_with_parameter f, char *pa
 /* Compute a two-operands operation */
 void compute_operation_2o(operation_2o f, char *name) {
   if (sp < 2) return;
-  double y = pop();
   double x = pop();
-  double r = f(y, x);
+  double y = pop();
+  double r = f(x, y);
   push(r);
   log_operation_2o(y, x, name, r);
 }
